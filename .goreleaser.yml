@@ -1,7 +1,13 @@
 project_name: boringproxy
 
 release:
-  prerelease: auto
+  # If set to auto, will mark the release as not ready for production
+  # in case there is an indicator for this in the tag e.g. v1.0.0-rc1
+  # If set to true, will mark the release as not ready for production.
+  # Default is false.
+  #
+  # leaving as false for now as all releases are "beta" but they should be full releases
+  # prerelease: auto
 
 builds:
   - main: ./cmd/boringproxy
