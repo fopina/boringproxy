@@ -2,6 +2,8 @@ https://go-review.googlesource.com/c/net/+/111135/
 
 https://go-review.googlesource.com/c/net/+/134675
 
+https://github.com/boringproxy/boringproxy/issues/163
+
 
 boringproxy development is sponsored by [TakingNames.io](https://takingnames.io).
 boringproxy offers full integration with TakingNames.io, providing the simplest
