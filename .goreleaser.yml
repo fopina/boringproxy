@@ -1,0 +1,43 @@
+project_name: boringproxy
+
+release:
+  prerelease: auto
+
+builds:
+  - main: ./cmd/boringproxy
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - freebsd
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+      - arm64
+      - arm
+      - '386'
+    goarm:
+      - '7'
+    ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: darwin
+        goarch: arm
+        goarm: 7
+    ldflags:
+      - -s -w -X main.Version={{.Version}}
+
+archives:
+- format: binary
+
+snapshot:
+  name_template: "{{ .Tag }}"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+    - '^Merge pull request'
